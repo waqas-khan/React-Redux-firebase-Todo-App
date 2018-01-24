@@ -40,13 +40,18 @@ changeHandler(ev){
     })
 }
 addTodo(){
-    let todo ={
+    if(this.state.todo !== ""){
+let todo ={
         todo:this.state.todo
     } 
 this.props.addingTodo(todo)
 this.setState({
         todo: ""
     })
+    }
+    else{
+        alert("Enter Something to Add")
+    }
 }
  editTodo(id,key,todo){
         console.log("editing" ,id,key,todo)
